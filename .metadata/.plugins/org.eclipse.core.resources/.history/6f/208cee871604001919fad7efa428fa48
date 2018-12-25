@@ -1,0 +1,11 @@
+package com.morningstar.controller;
+
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class GetToiController {
+	@GetMapping("/toi/news")
+	public Strng getToiNews() {
+		return "News from TOI";
+	}
+}

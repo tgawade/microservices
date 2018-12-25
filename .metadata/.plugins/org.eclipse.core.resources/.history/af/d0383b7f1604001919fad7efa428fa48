@@ -1,0 +1,5 @@
+package com.morningstar.controller;
+
+public class GetToiController {
+
+}

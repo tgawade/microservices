@@ -1,0 +1,11 @@
+server.port=8081
+spring.datasource.url=jdbc:postgresql://localhost:5432/temp?currentschema=assignment
+spring.datasource.username= postgres
+spring.datasource.password= shubhesh7
+spring.application.name=price_service
+
+spring.jpa.properties.hibernate.dialect = org.hibernate.dialect.PostgreSQLDialect
+spring.jpa.hibernate.ddl-auto = update
+spring.jpa.show-sql=true
+eureka.client.register-with-eureka=true
+eureka.client.fetch-registry=true

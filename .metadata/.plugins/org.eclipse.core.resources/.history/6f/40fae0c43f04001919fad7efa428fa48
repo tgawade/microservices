@@ -1,0 +1,4 @@
+server.port=2207
+management.security.enabled=false
+spring.application.name=zuul-server
+zuul.routes.newsproxy.url=http://localhost:

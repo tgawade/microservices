@@ -1,0 +1,14 @@
+package com.morningstar;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class MiddayService1Application {
+
+	public static void main(String[] args) {
+		SpringApplication.run(MiddayService1Application.class, args);
+	}
+
+}
+

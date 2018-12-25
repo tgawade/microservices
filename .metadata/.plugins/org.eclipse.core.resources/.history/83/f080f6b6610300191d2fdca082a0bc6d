@@ -1,0 +1,29 @@
+package com.morningstar.controller;
+import java.util.List;
+import java.util.Optional;
+import java.util.ArrayList;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.morningstar.entity.Product;
+import com.morningstar.repository.ProductRepository;
+
+@RestController
+public class GetPriceController {
+	@Autowired
+	private PriceRepository priceRepo;
+	
+	@GetMapping("/api/v1.0/product/get/all")
+	public ResponseEntity<List<Product>> getAllPrices() {
+		List<Product> productList = productRepo.findAll();
+
+		if (productList != null && productList.size() != 0) {
+			return new ResponseEntity<List<Product>>(productList, HttpStatus.OK);
+		}
+		return new ResponseEntity<List<Product>>(productList, HttpStatus.NOT_FOUND);
+	}
+}

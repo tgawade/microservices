@@ -1,0 +1,18 @@
+package com.morningstar.controller;
+
+import org.springframework.web.bind.annotation.RestController;
+
+import com.morningstar.service.NewsService;
+
+@RestController
+public class GetNewsController {
+	
+	@Autowired
+	private NewsService newsService;
+	
+	public NewsService getNews() {
+		return newsService.getNewsFromTOI();
+	}
+	
+	
+}

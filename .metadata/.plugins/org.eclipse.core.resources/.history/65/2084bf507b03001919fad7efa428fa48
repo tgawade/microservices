@@ -1,0 +1,15 @@
+package com.morningstar.repository;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.morningstar.entity.Product;
+
+public interface ProductRepository extends JpaRepository<Product,Long> {
+
+	Optional<List<Product>> findByCategory(String category);
+
+
+}

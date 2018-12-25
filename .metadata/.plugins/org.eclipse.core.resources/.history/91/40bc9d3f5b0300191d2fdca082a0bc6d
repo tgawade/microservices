@@ -1,0 +1,63 @@
+package com.morningstar.product;
+
+import java.util.List;
+import java.util.ArrayList;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.morningstar.entity.Product;
+import com.morningstar.repository.ProductRepository;
+@RestController
+
+public class GetProductController {
+	
+	@Autowired
+	private ProductRepository productRepo;
+	
+	@GetMapping("/api/v1.0/product/get/all")
+	public ResponseEntity<List<Product>> getAllProducts() {
+		List<Product> productList = productRepo.findAll();
+
+		if (productList != null && productList.size() != 0) {
+			return new ResponseEntity<List<Product>>(productList, HttpStatus.OK);
+		}
+		return new ResponseEntity<List<Product>>(productList, HttpStatus.NOT_FOUND);
+	}
+
+	@GetMapping("api/addProduct")
+	public Product addProduct() {
+		Product p = new Product();
+		p.setCategory("Elec");
+		p.setModel("XS");
+		p.setName("Iphone");
+		p.setStatus("Aukaat ke bahar");
+		productRepo.save(p);
+		return p;
+	}
+
+	@GetMapping("api/getProd")
+	public ResponseEntity<List<Product>> getProd() {
+		List<Product> prods = new ArrayList<Product>();
+		prods = productRepo.findAll();
+
+		if (prods.size() != 0)
+			return new ResponseEntity<List<Product>>(prods, HttpStatus.OK);
+
+		return new ResponseEntity<List<Product>>(prods, HttpStatus.FAILED_DEPENDENCY);
+	}
+	
+	@GetMapping("api/getProd/{productId}")
+	public ResponseEntity<Product> getProductById(@PathVariable("productId") Long Id){
+		Long prodId = productRepo.findById(id);
+		if (prodId != null)
+			return new ResponseEntity<Product>(prodId, HttpStatus.OK);
+
+		return new ResponseEntity<Product>(prodId, HttpStatus.FAILED_DEPENDENCY);
+	
+	}
+
+}

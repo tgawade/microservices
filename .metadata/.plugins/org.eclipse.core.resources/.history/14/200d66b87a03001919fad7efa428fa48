@@ -1,0 +1,18 @@
+package com.morningstar.controller;
+
+public class PostProductController {
+
+	@RestController
+	public class PostProductController {
+
+		@Autowired ProductService productService;
+		
+		@PostMapping("/api/v1.0/product/add")
+		public ResponseEntity<Product> addProduct(@RequestBody Product product){
+			
+			Product prd = productService.addProduct(product);
+			
+			return new ResponseEntity<Product>(prd, HttpStatus.OK);
+		}
+	}
+}

@@ -1,0 +1,17 @@
+package com.product;
+
+import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+
+public class GetProductController {
+
+ @Autowired
+ private ProductRepository productRepo;
+ 
+ @GetMapping("/api/v1.0/product/get/all")
+ public ResponseEntity<List<Product>> getAllProducts() {
+	 
+ }
+}

@@ -1,0 +1,8 @@
+package com.morningstar.repository;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import com.morningstar.entity.Product;
+
+public class PriceRepository extends JpaRepository<Product,Long> {
+
+}

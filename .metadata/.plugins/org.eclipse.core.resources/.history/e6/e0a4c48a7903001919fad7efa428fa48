@@ -1,0 +1,11 @@
+package com.morningstar.model;
+
+import com.morningstar.entity.Product;
+
+public class ProductDetail {
+
+	public ProductDetail(Product product, ProductPrice productPrice) {
+		// TODO Auto-generated constructor stub
+	}
+
+}

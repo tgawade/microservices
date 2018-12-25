@@ -1,0 +1,5 @@
+package com.morningstar.product;
+
+public class GetPriceController {
+
+}

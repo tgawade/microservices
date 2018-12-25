@@ -1,0 +1,9 @@
+package com.morningstar.exception;
+
+public class ProductException {
+
+	public ProductException(String string) {
+		// TODO Auto-generated constructor stub
+	}
+
+}
